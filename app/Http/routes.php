@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    if(Auth::check())//asd
+    if(Auth::check())//asa
       return view('home');
     else
       return view('auth.login');
