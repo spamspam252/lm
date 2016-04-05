@@ -18,34 +18,39 @@ Route::get('/', function () {
       return view('auth.login');
 });
 
-Route::get('/rent', function () {
-    return view('rent');
-})->name('rent');
-
+Route::get('/rent', [
+  'uses' => 'RentController@index',
+  'as' => 'rent'
+]);
 
 Route::group(['prefix' => 'return'],function(){
-  Route::get('/', function () {
-      return view('return');
-  })->name('return');
+  Route::get('/', [
+    'uses' => 'ReturnController@index',
+    'as' => 'return'
+  ]);
 
-  Route::get('/info', function () {
-      return view('return-info');
-  })->name('return-info');
+  Route::get('/info', [
+    'uses' => 'ReturnController@info',
+    'as' => 'return-info'
+  ]);
 });
 
 // MEMBER GROUP
 Route::group(['prefix'=>'member'],function(){
-  Route::get('/', function () {
-      return view('list-member');
-  })->name('list-member');
+  Route::get('/', [
+    'uses' => 'MemberController@index',
+    'as' => 'list-member'
+]);
 
-  Route::get('/add', function () {
-      return view('member-add');
-  })->name('member-add');
+  Route::get('/add', [
+    'uses' => 'MemberController@add',
+    'as' => 'member-add'
+  ]);
 
-  Route::get('/detail', function () {
-      return view('member-detail');
-  })->name('member-detail');
+  Route::get('/detail', [
+    'uses' => 'MemberController@detail',
+    'as' => 'member-detail'
+  ]);
 });
 
 // BOOK GROUP
@@ -69,33 +74,38 @@ Route::group(['prefix'=>'book'],function(){
 
 // AUTHOR GROUP
 Route::group(['prefix'=>'author'],function(){
-  Route::get('/', function () {
-      return view('list-author');
-  })->name('list-author');
+  Route::get('/', [
+    'uses' => 'AuthorController@index',
+    'as' => 'list-author'
+]);
 
-  Route::get('/add', function () {
-      return view('author-add');
-  })->name('author-add');
+  Route::get('/add', [
+    'uses' => 'AuthorController@add',
+    'as' => 'author-add'
+  ]);
 
-  Route::get('/detail', function () {
-      return view('author-detail');
-  })->name('author-detail');
+  Route::get('/detail', [
+    'uses' => 'AuthorController@detail',
+    'as' => 'author-detail'
+  ]);
 });
 
 // PUBLISHER GROUP
 Route::group(['prefix' => 'publisher'],function(){
-  Route::get('/', function () {
-      return view('list-publisher');
-  })->name('list-publisher');
+  Route::get('/', [
+    'uses' => 'PublisherController@index',
+    'as' => 'list-publisher'
+]);
 
-  Route::get('/add', function () {
-      return view('publisher-add');
-  })->name('publisher-add');
+  Route::get('/add', [
+    'uses' => 'PublisherController@add',
+    'as' => 'publisher-add'
+  ]);
 
-  Route::get('/detail', function () {
-      return view('publisher-detail');
-  })->name('publisher-detail');
-
+  Route::get('/detail', [
+    'uses' => 'PublisherController@detail',
+    'as' => 'publisher-detail'
+  ]);
 
 });
 
