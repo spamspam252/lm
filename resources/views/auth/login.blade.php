@@ -23,8 +23,8 @@
 
                 <div class="input-field{{ $errors->has('password') ? ' has-error' : '' }}">
                       <i class="material-icons prefix">lock_outline</i>
-                      <label class="col-md-4 control-label">Password</label>
-                        <input type="password" name="password">
+                      <label class="col-md-4 control-label" for="password">Password</label>
+                        <input type="password" name="password" id ="password">
 
                         @if ($errors->has('password'))
                             <span class="help-block">

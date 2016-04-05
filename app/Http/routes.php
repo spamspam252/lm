@@ -12,7 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    if(Auth::check())
+      return view('home');
+    else
+      return view('auth.login');
 });
 
 Route::get('/rent', function () {
@@ -47,11 +50,20 @@ Route::group(['prefix'=>'member'],function(){
 
 // BOOK GROUP
 Route::group(['prefix'=>'book'],function(){
-  Route::get('/', 'BookController@index');
+  Route::get('/', [
+    'uses' => 'BookController@index',
+    'as' => 'list-book'
+]);
 
-  Route::get('/add', 'BookController@add');
+  Route::get('/add', [
+    'uses' => 'BookController@add',
+    'as' => 'book-add'
+  ]);
 
-  Route::get('/detail', 'BookController@detail');
+  Route::get('/detail', [
+    'uses' => 'BookController@detail',
+    'as' => 'book-detail'
+  ]);
 
 });
 
@@ -89,7 +101,10 @@ Route::group(['prefix' => 'publisher'],function(){
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', [
+  'uses'=>'HomeController@index',
+  'as' => 'home'
+]);
 
 Route::get('/logout', array('as' => 'logout', function () {
     Auth::logout();

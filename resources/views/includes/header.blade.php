@@ -1,7 +1,7 @@
 <header>
   <div class="navbar-fixed">
     <nav>
-      <div class="nav-wrapper"><a href="/" class="brand-logo">Library<strong>Manager</strong></a><a href="#" data-activates="side-out" class="button-collapse"><i class="material-icons">menu</i></a>
+      <div class="nav-wrapper"><a href="{{route('home')}}" class="brand-logo">Library<strong>Manager</strong></a><a href="#" data-activates="side-out" class="button-collapse"><i class="material-icons">menu</i></a>
         <!--SIDENAV-->
         <ul id="side-out" class="side-nav">
           <li style="padding:0 !important"><a id="logo-container">Library<strong>Manager</strong></a></li>
@@ -22,7 +22,7 @@
               </li>
             </ul>
           </li>
-          <li><a href="/">Log Out<i class="material-icons left">power_settings_new</i></a></li>
+          <li><a href="{{ url('/logout') }}">Log Out<i class="material-icons left">power_settings_new</i></a></li>
         @endif
         </ul>
         <!-- END SIDENAV -->
@@ -31,7 +31,7 @@
           <li><a href="{{route('rent')}}" class="nav-item">Rent<i class="fa fa-sign-in left fa-2x"></i></a></li>
           <li><a href="{{route('return')}}" class="nav-item">Return<i class="fa fa-sign-out right fa-2x"></i></a></li>
           <li><a data-activates="dropdown" class="dropdown-button" data-beloworigin="true" aria-haspopup="true" aria-expanded="false">List<i class="material-icons right">view_list</i></a></li>
-          <li><a href="/" class="nav-item">Log Out<i class="material-icons right">power_settings_new</i></a></li>
+          <li><a href="{{ url('/logout') }}" class="nav-item">Log Out<i class="material-icons right">power_settings_new</i></a></li>
           <!-- DROPDOWN-->
           <ul id="dropdown" class="dropdown-content">
             <li><a href="{{route('list-member')}}">Member<i class="fa fa-user left"></i></a></li>
