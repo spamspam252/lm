@@ -2,7 +2,7 @@
 
 @section('content')
 <main id="list-book-section" class="container">
-      <div id="renting-books-content" class="row no-more-margin-bottom">
+      <div id="renting-member-content" class="row no-more-margin-bottom">
         <div class="col s12">
           <ul data-collapsible="accordion" class="collapsible light-blue lighten-4">
             <li>

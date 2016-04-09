@@ -100,7 +100,9 @@ main {
 #book-num {
   box-shadow: none; }
 
-#renting-books-content {
+#renting-books-content,
+#renting-member-content
+ {
   margin-top: 20px; }
 
 .no-more-margin-bottom {

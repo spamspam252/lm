@@ -6,7 +6,8 @@
         <ul id="side-out" class="side-nav">
           <li style="padding:0 !important"><a id="logo-container">Library<strong>Manager</strong></a></li>
           @if (!Auth::guest())
-          <li><a href="{{route('rent')}}">Rent<i class="fa fa-sign-in left fa-2x"></i></a></li>
+          <li><a href="">Hello, {{ Auth::user()->name }}!</a></li>
+          <li><a href="{{route('rent')}}" >Rent<i class="fa fa-sign-in left fa-2x"></i></a></li>
           <li><a href="{{route('return')}}">Return<i class="fa fa-sign-out left fa-2x"></i></a></li>
           <li class="no-padding">
             <ul class="collapsible collapsible-accordion">
@@ -28,6 +29,7 @@
         <!-- END SIDENAV -->
         @if (!Auth::guest())
         <ul class="right hide-on-med-and-down">
+          <li><a href="/">Hello, {{ Auth::user()->name }}!</a></li>
           <li><a href="{{route('rent')}}" class="nav-item">Rent<i class="fa fa-sign-in left fa-2x"></i></a></li>
           <li><a href="{{route('return')}}" class="nav-item">Return<i class="fa fa-sign-out right fa-2x"></i></a></li>
           <li><a data-activates="dropdown" class="dropdown-button" data-beloworigin="true" aria-haspopup="true" aria-expanded="false">List<i class="material-icons right">view_list</i></a></li>

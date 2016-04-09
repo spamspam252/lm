@@ -14,7 +14,7 @@
   </head>
   <body>
   @include('includes.header')
-  @yield('content');
+  @yield('content')
   @include('includes.footer')
     <!-- script(type="application/javascript", src= compDir + "jquery-2.2.1.min.js")-->
   <script type="application/javascript" src="{{URL::to('assets/components/jquery-2.1.4.min.js')}}"></script>
